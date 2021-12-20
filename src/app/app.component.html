@@ -1,1 +1,10 @@
-<app-document-editor></app-document-editor>
+<ng-container *ngIf="this.$navigation.route$ | async as route">
+  <ng-container *ngIf="this.isLanguageReady">
+    <app-layout *ngIf="!this.$navigation.isIndependentPage(route); else tIndependentPage" [activeRoute]="route">
+    </app-layout>
+    <ng-template #tIndependentPage>
+      <router-outlet></router-outlet>
+    </ng-template>
+  </ng-container>
+</ng-container>
+<app-overlay></app-overlay>

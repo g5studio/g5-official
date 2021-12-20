@@ -8,7 +8,6 @@ import {
   ESize,
   EStatus,
   EAction,
-  EModule
 } from '@utilities/enums/common.enum';
 
 @Injectable({
@@ -26,6 +25,5 @@ export class EnumHelperService {
   get domain(): typeof EDomain { return EDomain; }
   get editableFieldType(): typeof EEditableFieldType { return EEditableFieldType; }
   get action(): typeof EAction { return EAction; }
-  get module(): typeof EModule { return EModule; }
 
 }

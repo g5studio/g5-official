@@ -42,13 +42,7 @@ export enum EStatus {
  * @description query domain
  */
 export enum EDomain {
-  SSO = 'sso',
-  Files = 'fileAssetsUrl',
-  Backend = 'esopBackendApiUrl',
-  UserAdmin = 'userAdminApiUrl',
-  ForexAdmin = 'forexAdminApiUrl',
-  CashAdmin = 'cashAdminApiUrl',
-  AccountAdmin = 'accountAdminApiUrl'
+
 }
 
 export enum EEditableFieldType {
@@ -67,25 +61,4 @@ export enum EAction {
   Apply,
   Preview,
   Submit
-}
-
-/**
- * @description system module
- */
-export enum EModule {
-  MSA = 1,
-  Esop,
-  Esop_Company,
-  Security,
-  OAO
-}
-
-/**
- * @description error message module
- */
-export enum ErrorModule {
-  MSA = 'Msa',
-  Esop = 'Esop',
-  User = 'User',
-  Security = 'Security'
 }
