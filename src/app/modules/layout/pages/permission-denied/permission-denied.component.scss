@@ -1,0 +1,35 @@
+@import "variables";
+@import "mixins";
+.Error {
+    height: 100%;
+    width: 100%;
+    @include flex-center();
+    flex-direction: column;
+    padding-top: 5rem;
+    span {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        h2 {
+            margin-right: 0.5rem;
+            color: $aqua-green;
+            font-size: map-get($font-level, "xxl");
+            line-height: 30px;
+        }
+        color: $midnight;
+        font-size: map-get($font-level, "lg");
+        margin-bottom: 1rem;
+    }
+    p {
+        color: $dark-gray-blue;
+        font-size: map-get($font-level, "sm");
+        line-height: 1.25rem;
+        margin: 0;
+        font-weight: bold;
+        margin-bottom: 3.5rem;
+    }
+    img {
+        width: 35rem;
+        height: 22.56rem;
+    }
+}

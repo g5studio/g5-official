@@ -1,0 +1,31 @@
+@import "variables";
+@import "mixins";
+
+.PopupMessage {
+  z-index: map-get($layout-level, "priority");
+  position: fixed;
+  top: 3.5rem;
+  left: calc(50%);
+  transform: translate(-25%);
+  &--central {
+    transform: translate(-50%);
+  }
+  width: 32.5rem;
+  @include border($water-grass);
+  background-color: $light-green;
+  color: $water-grass;
+  &__Container {
+    font-weight: bold;
+    display: flex;
+    position: relative;
+    padding: 1rem;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    em {
+      line-height: 1rem;
+      color: $dark-gray-blue;
+      font-weight: bold;
+    }
+  }
+}

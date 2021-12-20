@@ -1,0 +1,113 @@
+$xs: map-get($font-level, "xs");
+$sm: map-get($font-level, "sm");
+$md: map-get($font-level, "md");
+$lg: map-get($font-level, "lg");
+$lgx: map-get($font-level, "lgx");
+$xl: map-get($font-level, "xl");
+$xxl: map-get($font-level, "xxl");
+
+.cg-font {
+  @include cg-font($md, inherit, normal);
+  &-xs {
+    font-size: $xs !important;
+  }
+  &-sm {
+    font-size: $sm !important;
+  }
+  &-lg {
+    font-size: $lg !important;
+  }
+  &-lgx {
+    font-size: $lgx !important;
+  }
+  &-xl {
+    font-size: $xl !important;
+  }
+  &-xxl {
+    font-size: $xxl !important;
+  }
+  &-black {
+    color: $midnight !important;
+  }
+  &-white {
+    color: $white !important;
+  }
+  &-azure {
+    color: $azure !important;
+  }
+  &-gray-blue {
+    color: $gray-blue !important;
+  }
+  &-danger {
+    color: $danger !important;
+  }
+  &-primary {
+    color: $primary !important;
+  }
+  &-link-water {
+    color: $link-water !important;
+  }
+  &-hint {
+    color: $gray !important;
+  }
+  &-dark-gray-blue {
+    color: $dark-gray-blue !important;
+  }
+  &-green {
+    color: $water-grass !important;
+  }
+  &-rose {
+    color: $rose !important;
+  }
+  &-yellow {
+    color: $chrome-yellow !important;
+  }
+  &-bold {
+    font-weight: bold !important;
+  }
+  &-justify {
+    text-align: justify !important;
+  }
+  &-center {
+    text-align: center !important;
+  }
+  &-right {
+    text-align: right !important;
+  }
+  &-no-wrap {
+    white-space: nowrap !important;
+  }
+  &-pre-line {
+    white-space: pre-line !important;
+  }
+  &-height {
+    &-xs {
+      line-height: $xs !important;
+    }
+    &-sm {
+      line-height: $sm !important;
+    }
+    &-md {
+      line-height: $md !important;
+    }
+    &-lg {
+      line-height: $lg !important;
+    }
+    &-lgx {
+      line-height: $lgx !important;
+    }
+    &-xl {
+      line-height: $xl !important;
+    }
+    &-xxl {
+      line-height: $xxl !important;
+    }
+  }
+}
+
+.cg-border {
+  border: 1px solid $link-water;
+  &-danger {
+    border-color: $danger;
+  }
+}

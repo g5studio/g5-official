@@ -1,0 +1,10 @@
+<div class="Dialog">
+  <div *ngIf="this.hideHeader === undefined" class="Dialog__Header">
+    <ng-content select="[title]"></ng-content>
+    <em *ngIf="this.hideClose === undefined" (click)="this.close.emit()" class="icon-close"></em>
+  </div>
+  <div class="Dialog__Container">
+    <ng-content></ng-content>
+  </div>
+  <ng-content select="[footer]"></ng-content>
+</div>

@@ -1,0 +1,12 @@
+<section class="Overlay">
+  <div #tBackdrop [appActivatedDialog]="dialog.entity" *ngFor="let dialog of this.dialogs" class="Overlay__Dialog"
+    [class.Overlay__Dialog--aside]="dialog.entity.params.options.isAside"
+    [class.Overlay__Dialog--backdrop]="dialog.entity.params.options.backdrop"
+    (click)="this.onDialogBackdropClick(dialog.entity, $event, tBackdrop)">
+    <div class="Overlay__Dialog__Container Overlay__Dialog--{{dialog.entity.params.size}}">
+      <ng-template *ngComponentOutlet="dialog.entity.component; injector: dialog.injector">
+      </ng-template>
+    </div>
+  </div>
+</section>
+<app-loading></app-loading>

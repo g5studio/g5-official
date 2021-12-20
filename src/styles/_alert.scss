@@ -1,0 +1,27 @@
+.alert-info {
+  @include cg-alert($light-green, $light-green, $water-grass);
+}
+
+.alert-warning {
+  @include cg-alert(#e7f2fc, #e7f2fc, #0e7aed);
+  &--info {
+    &::before {
+      content: "\e912";
+    }
+  }
+}
+
+.alert-danger {
+  @include cg-alert($light-red, $light-red, $carmine);
+}
+
+.alert-yellow {
+  @include cg-alert($light-yellow, $light-yellow, $chrome-yellow);
+  &--warning::before {
+    content: "\e93e";
+  }
+
+  &--clock::before {
+    content: "\e94e";
+  }
+}

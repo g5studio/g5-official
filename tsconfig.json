@@ -10,11 +10,27 @@
     "module": "esnext",
     "moduleResolution": "node",
     "importHelpers": true,
+    "allowJs": true,
     "target": "es2015",
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "@shared/*": [
+        "src/app/shared/*"
+      ],
+      "@layout/*": [
+        "src/app/modules/layout/*"
+      ],
+      "@user/*": [
+        "src/app/modules/user/*"
+      ],
+      "@utilities/*": [
+        "src/app/utilities/*"
+      ]
+    },
+    "allowSyntheticDefaultImports": true,
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,

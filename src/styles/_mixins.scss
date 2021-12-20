@@ -1,0 +1,205 @@
+@import "variables";
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin icon($content, $color: $midnight) {
+  content: $content;
+  font-family: "icomoon" !important;
+  display: inline-block;
+  color: $color;
+}
+
+@mixin cg-font($size, $color, $weight) {
+  color: $color !important;
+  font-size: $size !important;
+  font-weight: $weight;
+}
+
+@mixin cg-input {
+  display: flex;
+  outline: none;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 2.5rem;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  background-color: $white;
+  @include border($link-water);
+  & > em {
+    margin-left: 1rem;
+  }
+  &:focus {
+    border-color: $primary;
+  }
+
+  &:disabled {
+    color: $dark-gray-blue;
+    border-color: $light-gray;
+    background-color: $gainsboro;
+  }
+}
+
+@mixin dropdown-shadow {
+  box-shadow: 0 2px 5px 0 rgba(99, 115, 129, 0.2), 0 6px 14px 0 rgba(99, 115, 129, 0.1),
+    0 24px 24px 0 rgba(99, 115, 129, 0.04);
+  border: 1px solid rgba(99, 115, 129, 10%);
+  background-color: $white;
+}
+
+@mixin cg-card {
+  @include box-shadow(rgba(236, 238, 241, 0.6));
+  @include border($sliver);
+  background-color: $white;
+}
+
+@mixin cg-alert($bg, $border, $text) {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  line-height: 1.5rem;
+  padding: 0.5rem 1rem;
+  background-color: $bg;
+  border-color: $border;
+  color: $text;
+  &::before {
+    @include icon("\e914", $text);
+    display: block;
+    font-size: map-get($font-level, "sm");
+    margin-right: 0.5rem;
+    line-height: 1.5rem;
+  }
+  ol {
+    padding-left: 1rem;
+  }
+}
+
+@mixin box-shadow($color) {
+  box-shadow: 0 1px 2px 0 $color;
+}
+
+@mixin cg-outrange-hidden {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+@mixin border($color) {
+  border: 1px solid $color;
+  border-radius: 3px;
+}
+
+@mixin scroll {
+  overflow: auto;
+  &::-webkit-scrollbar {
+    width: 0.375rem;
+    height: 0.375rem;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $light-gray;
+    border-radius: 10px;
+  }
+}
+
+@mixin hyperlink($size) {
+  font-size: $size;
+  color: $primary;
+  display: inline;
+  cursor: pointer;
+  &:hover {
+    color: #0656a3;
+    text-decoration: underline;
+  }
+}
+
+@mixin dropdown-arrow {
+  outline: none;
+  border: 0;
+  background-color: inherit;
+  font-size: map-get($font-level, "sm");
+  &::after {
+    line-height: 100%;
+    @include icon("\e917");
+    margin-left: 0.25rem;
+    transition: 0.25s;
+    font-size: map-get($font-level, "sm");
+  }
+  &:focus {
+    &::after {
+      transform: rotateZ(-180deg);
+      transition: 0.25s;
+    }
+  }
+}
+
+@mixin dropdown-button($background: $white) {
+  height: 2.5rem;
+  @include flex-center();
+  justify-content: space-between;
+  @include dropdown-arrow();
+  @include border($link-water);
+  color: $midnight;
+  background-color: $background;
+  padding: 0.5rem 1rem;
+  width: 100%;
+  &:focus {
+    border-color: $primary;
+  }
+
+  &:disabled {
+    color: $dark-gray-blue;
+    @include border($light-gray);
+    background-color: $gainsboro;
+    cursor: not-allowed;
+  }
+
+  &::ng-deep {
+    p {
+      @include cg-outrange-hidden;
+    }
+  }
+}
+
+@mixin expand-arrow {
+  input {
+    display: none;
+  }
+  input:checked ~ label::before {
+    transform: rotate(-180deg);
+    transition: 0.5s;
+  }
+  input:disabled ~ label::before {
+    display: none;
+  }
+  label {
+    &::before {
+      display: block;
+      content: "\e902";
+      font-family: "icomoon" !important;
+      font-size: map-get($font-level, "xs");
+      margin-left: 0.5rem;
+      font-weight: bold;
+      cursor: pointer;
+      color: $dark-gray-blue;
+      transition: 0.5s;
+    }
+  }
+}
+
+@mixin statusBtn($font-color, $bg-color) {
+  user-select: none;
+  display: inline-block;
+  line-height: 1.5rem;
+  font-size: 0.875rem;
+  color: $font-color;
+  background-color: $bg-color;
+  padding: 0 0.5rem;
+  border-radius: 3px;
+}

@@ -1,0 +1,14 @@
+<div class="Modal Modal--{{this.config.type}}">
+  <div class="Modal__Container ">
+    <div *ngIf='this.config.title' class="Modal__Title">
+      <div class="flex-grow-1">{{this.config.title | translate}}</div>
+      <em ngbAutofocus [class.d-none]="!config?.close" (click)="this.close()" class="icon-close"></em>
+    </div>
+    <div *ngIf='this.config.content' [class.pt-0]="!this.config.title" class="Modal__Content"
+      [class.Modal__Content--scroll]="config?.scroll" [innerHtml]='this.config.content | translate'></div>
+    <div class="Modal__ButtonBar">
+      <button *ngIf='this.config.cancel' (click)='this.cancel()'>{{this.config.cancel | translate}}</button>
+      <button *ngIf='this.config.confirm' (click)='this.confirm()'>{{this.config.confirm | translate}}</button>
+    </div>
+  </div>
+</div>

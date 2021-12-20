@@ -1,0 +1,58 @@
+@import "variables";
+@import "mixins";
+
+.Language {
+  user-select: none;
+  position: relative;
+  button {
+    @include dropdown-arrow;
+    &::after {
+      font-size: 0.625rem;
+    }
+  }
+
+  &__Menu {
+    position: absolute;
+    @include cg-card;
+    max-height: 10rem;
+    z-index: map-get($map: $layout-level, $key: "important");
+    top: calc(100% + 1rem);
+    right: 0;
+    box-sizing: content-box;
+    li {
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: map-get($font-level, "sm");
+      height: 2.5rem;
+      width: 5.625rem;
+      &:hover {
+        background-color: $sliver;
+      }
+    }
+  }
+}
+
+.white {
+  button {
+    color: $white;
+    &::after {
+      color: $white;
+    }
+  }
+
+  ul {
+    li {
+      color: $midnight;
+    }
+  }
+}
+
+.small {
+  ul {
+    li {
+      height: 2rem;
+    }
+  }
+}

@@ -1,0 +1,135 @@
+.form-control {
+  height: 2.5rem;
+  &:disabled,
+  &[readonly] {
+    -webkit-text-fill-color: $gray-blue;
+    border-color: $light-gray;
+    color: $gray-blue;
+    cursor: not-allowed;
+  }
+  &.area {
+    height: 5rem;
+  }
+
+  &:focus {
+    border-color: $primary;
+  }
+
+  &::placeholder {
+    color: $link-water;
+  }
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  &[type="number"] {
+    -moz-appearance: textfield;
+  }
+}
+
+.form-text {
+  color: $gray;
+  &.general-color {
+    color: $midnight;
+  }
+  &.icon-color {
+    color: $dark-gray-blue;
+  }
+  &.xl-size {
+    font-size: $font-size-sub-sub-title;
+  }
+  &.md-size {
+    font-size: $font-size-base;
+  }
+  &.sm-size {
+    font-size: $font-size-sm;
+  }
+  &.xs-size {
+    font-size: $font-size-xs;
+  }
+  &.link {
+    color: $bright-blue;
+  }
+  .obvious {
+    color: $navy-blue;
+  }
+  .content-vertical-center {
+    display: flex;
+    align-items: center;
+  }
+  &.word-break-all {
+    word-break: break-all;
+  }
+  &.bold {
+    font-weight: bold;
+  }
+  &.right {
+    text-align: right;
+  }
+}
+
+.form-title {
+  color: $midnight;
+  font-weight: bold;
+  &.bottom-down {
+    margin-bottom: 0.5rem;
+  }
+  .title {
+    font-size: $font-size-title;
+  }
+  .sub-title {
+    font-size: $font-size-sub-title;
+  }
+  .sub-middle-title {
+    font-size: $font-size-sub-middle-title;
+  }
+  .sub-sub-title {
+    font-size: $font-size-sub-sub-title;
+  }
+  .base-title {
+    font-size: $font-size-base;
+  }
+  .important {
+    color: $carmine;
+  }
+  .content-vertical-center {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.form-important {
+  color: $carmine;
+}
+
+.form-icon {
+  &.large {
+    font-size: $font-size-title-large;
+    width: 5rem;
+  }
+  &.middle {
+    font-size: $font-size-title;
+  }
+  &.process {
+    color: $carmine;
+  }
+  &.complete {
+    color: $azure;
+  }
+  &.disable {
+    color: $gray-blue;
+  }
+  &.content-vertical-center {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.paragraph-bottom {
+  p {
+    margin-bottom: 1rem;
+  }
+}

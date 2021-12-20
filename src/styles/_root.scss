@@ -1,0 +1,144 @@
+// 全局設定
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+button:focus,
+input:focus {
+  outline: none;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+h1,
+h2,
+p,
+label,
+ol,
+ul {
+  margin: 0;
+}
+
+//擋掉原本chrome內建的date picker
+input::-webkit-calendar-picker-indicator {
+  display: none;
+}
+
+html {
+  font-size: 16px; //1rem
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  min-width: 1024px;
+  overflow-anchor: none;
+  overflow: hidden;
+  font-family: "SF Pro Text", Arial;
+  em {
+    cursor: pointer;
+    &[auto] {
+      cursor: auto;
+    }
+  }
+  &:lang(zh-CN) {
+    font-family: "SF Pro Text", Arial, "Microsoft YaHei", "微软雅黑", "PingFangSC-Regular";
+  }
+  &:lang(zh-HK) {
+    font-family: "SF Pro Text", Arial, "Microsoft JhengHei", "微軟正黑體", "PingFangTC-Regular";
+  }
+  &:lang(ja) {
+    font-family: YuGothic, "Hiragino Sans";
+  }
+}
+
+button {
+  user-select: none;
+  font-size: map-get($font-level, "sm");
+  line-height: 20px;
+  &[placeholder],
+  &[placeholder]:focus {
+    color: $link-water;
+    text-align: left;
+  }
+  background-color: transparent;
+}
+
+input {
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+    appearance: none;
+  }
+  &[type="number"] {
+    -moz-appearance: textfield;
+  }
+}
+
+h2 {
+  line-height: 24px;
+  &:empty {
+    display: none;
+  }
+  & > label {
+    margin-left: 0.75rem;
+    font-size: map-get($font-level, "xs");
+    color: $dark-gray-blue;
+    font-weight: 400;
+    &::before {
+      content: "- ";
+    }
+    &:empty {
+      display: none;
+    }
+  }
+}
+
+h3 {
+  line-height: 20px;
+  margin-bottom: 0.5rem;
+  font-size: map-get($font-level, "sm");
+  color: $midnight;
+  &:empty {
+    display: none;
+  }
+  & > label {
+    margin-left: 0.75rem;
+    font-size: map-get($font-level, "xs");
+    color: $dark-gray-blue;
+    font-weight: 400;
+    &::before {
+      content: "- ";
+    }
+    &:empty {
+      display: none;
+    }
+  }
+}
+
+header[page-title] {
+  padding: 2rem 4rem 1.5rem 4rem;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  font-size: map-get($font-level, "xl");
+  line-height: 1.5rem;
+  & > span {
+    cursor: pointer;
+    & > em {
+      font-size: map-get($font-level, "md");
+    }
+    font-size: map-get($font-level, "sm");
+    font-weight: bold;
+    color: $dark-gray-blue;
+    margin-bottom: 0.5rem;
+  }
+}
+
+section[page-container] {
+  padding: 0 4rem;
+}

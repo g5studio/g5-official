@@ -1,0 +1,6 @@
+<div class="PopupMessage" [class.PopupMessage--central]="central">
+    <div class="PopupMessage__Container">
+        <ng-content></ng-content>
+        <em (click)='this.controller.close()' class="icon-close"></em>
+    </div>
+</div>

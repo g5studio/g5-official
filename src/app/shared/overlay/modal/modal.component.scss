@@ -1,0 +1,125 @@
+@import "variables";
+@import "mixins";
+
+$normal: $primary;
+$alert: $danger;
+
+.Modal {
+  box-shadow: 0 2px 5px 0 rgba(99, 115, 129, 0.2), 0 6px 24px 0 rgba(99, 115, 129, 0.1),
+    0 50px 44px 0 rgba(99, 115, 129, 0.04);
+  padding-top: 0.25rem;
+
+  &--normal {
+    background-color: $normal;
+
+    button {
+      &:last-child {
+        background-color: $normal;
+        color: $white;
+        border: none;
+      }
+    }
+  }
+
+  &--info {
+    background-color: $gray-blue;
+  }
+
+  &--alert {
+    background-color: $alert;
+
+    button {
+      &:last-child {
+        background-color: $alert;
+        color: $white;
+        border: none;
+      }
+    }
+  }
+
+  &__Container {
+    background-color: $white;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.125rem;
+    padding: 2rem 1.5rem 1.5rem 1.5rem;
+  }
+
+  &__Title {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    color: $midnight;
+  }
+
+  &__Content {
+    padding-top: 0.5rem;
+    font-size: 0.875rem;
+    color: $dark-gray-blue;
+    white-space: pre-wrap;
+
+    &--scroll {
+      max-height: 70vh;
+      overflow: auto;
+    }
+
+    &::ng-deep {
+      ul {
+        list-style-type: disc;
+        padding-left: 1rem;
+        li {
+          &:only-child {
+            margin-left: -1rem;
+            list-style: none;
+          }
+          &:not(:last-of-type) {
+            margin-bottom: 0.5rem;
+          }
+        }
+      }
+    }
+  }
+
+  &__ButtonBar {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 3rem;
+
+    & > button {
+      @include border($link-water);
+      outline: none;
+      border-radius: 3px;
+      font-size: 0.875rem;
+      color: $dark-gray-blue;
+      background-color: $white;
+      height: 2rem;
+      padding: 0 1rem;
+
+      &:not(:last-child) {
+        margin-right: 1.5rem;
+      }
+    }
+  }
+}
+
+.normal {
+  background-color: $normal;
+  button {
+    &:last-child {
+      background-color: $normal;
+      color: $white;
+      border: none;
+    }
+  }
+}
+
+.alert {
+  background-color: $alert;
+  button {
+    &:last-child {
+      background-color: $alert;
+      color: $white;
+      border: none;
+    }
+  }
+}

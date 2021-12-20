@@ -25,11 +25,17 @@
             "aot": true,
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/fonts"
             ],
             "styles": [
               "src/styles.scss"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/styles"
+              ]
+            },
             "scripts": []
           },
           "configurations": {
@@ -123,6 +129,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "g5-official"
+    }
+  },
+  "defaultProject": "g5-official",
+  "cli": {
+    "analytics": false
+  }
 }
