@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { HighlightDirective } from './highlight.directive';
 import { ResponsiveViewportDirective } from './responsive-viewport.directive';
 import { ActivatedDialogDirective } from './activated-dialog.directive';
+import { DragEventDirective } from './drag-event.directive';
 
 
 
@@ -12,7 +13,8 @@ import { ActivatedDialogDirective } from './activated-dialog.directive';
     HighlightDirective,
     TooltipDirective,
     ResponsiveViewportDirective,
-    ActivatedDialogDirective
+    ActivatedDialogDirective,
+    DragEventDirective
   ],
   imports: [
     CommonModule
@@ -21,7 +23,8 @@ import { ActivatedDialogDirective } from './activated-dialog.directive';
     HighlightDirective,
     TooltipDirective,
     ResponsiveViewportDirective,
-    ActivatedDialogDirective
+    ActivatedDialogDirective,
+    DragEventDirective
   ]
 })
 export class DirectivesModule { }

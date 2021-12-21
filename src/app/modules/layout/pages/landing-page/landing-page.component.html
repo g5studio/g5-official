@@ -1,1 +1,38 @@
-welcome
+<header #tHeader>
+  <label>
+    <img src="assets/images/icons/logo.png" alt="">
+    Studio™
+  </label>
+  <app-language-menu></app-language-menu>
+</header>
+<div appResponsiveViewport [responseBuffers]="[tHeader]" class="scroll-bar">
+  <section banner>
+    <nav appDragEvent touchOnly (dragCompleted)="this.onTouch($event.horizontal)">
+      <img src="assets/images/introduction/period-1.svg" alt="">
+      <button class="icon-arrow-left" (click)="this.select(this.current - 1 < 0 ? 2 : this.current -1)"></button>
+      <img *ngFor="let period of [1,2,3]" [class.fadeout]="period !== this.current + 1"
+        [src]="'assets/images/introduction/period-' + period + '.svg'" alt="">
+      <button class="icon-arrow-right" (click)="this.select(this.current + 1 >= 3  ? 0 : this.current + 1)"></button>
+    </nav>
+    <article>
+      <h1>{{("Pages.Landing.Carousel.Period" + (this.current + 1) + ".Title")| translate}}</h1>
+      <p>{{"Pages.Landing.Carousel.Period"+ (this.current + 1) +".Content" | translate}}</p>
+    </article>
+    <ul periods>
+      <li *ngFor="let period of [1,2,3]">
+        <input [checked]="(this.current + 1) === period" [id]="'period-' + period" type="radio" name="periods"
+          (change)="this.select(period - 1)">
+        <label [for]="'period-' + period"></label>
+      </li>
+    </ul>
+  </section>
+  <section>
+
+  </section>
+  <section>
+
+  </section>
+  <footer>
+    <p class="cg-font cg-font-xs cg-font-white">G5Studio™ Offical Limited All Rights Reserved.</p>
+  </footer>
+</div>

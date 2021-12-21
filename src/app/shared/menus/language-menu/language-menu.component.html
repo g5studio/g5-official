@@ -1,7 +1,8 @@
-<div #tContainer class="Language" [class.white]="this.isWhite" [class.small]="this.isSmall">
-  <button (click)="this.isOpen ? this.close($event.target) : this.expand(tContainer)" type="button">{{"Language.Short."+
-    $translate.currentLang | translate}}</button>
+<section #tContainer class="Language">
+  <button (click)="this.isOpen ? this.close($event.target) : this.expand(tContainer)" type="button">
+    {{("Language.Short."+ $translate.currentLang) | translate}}
+  </button>
   <ul *ngIf="this.isOpen" class="Language__Menu scroll-bar">
     <li *ngFor="let lan of $translate.getLangs()" (click)="this.setLanguage(lan)">{{"Language."+lan | translate}}</li>
   </ul>
-</div>
+</section>

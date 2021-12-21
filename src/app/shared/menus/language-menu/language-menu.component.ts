@@ -8,10 +8,7 @@ import { LanguageService } from '@shared/services/language.service';
   templateUrl: './language-menu.component.html',
   styleUrls: ['./language-menu.component.scss']
 })
-export class LanguageMenuComponent extends PopupBox implements OnInit {
-
-  @Input() white;
-  @Input() small;
+export class LanguageMenuComponent extends PopupBox {
 
   constructor(
     public $translate: TranslateService,
@@ -20,11 +17,6 @@ export class LanguageMenuComponent extends PopupBox implements OnInit {
     super();
   }
 
-  get isWhite() { return this.white !== undefined && this.white !== false; }
-  get isSmall() { return this.small !== undefined && this.small !== false; }
-
-  ngOnInit(): void {
-  }
 
   public close(target: HTMLElement) {
     target.blur();

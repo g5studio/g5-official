@@ -33,26 +33,3 @@
     }
   }
 }
-
-.white {
-  button {
-    color: $white;
-    &::after {
-      color: $white;
-    }
-  }
-
-  ul {
-    li {
-      color: $midnight;
-    }
-  }
-}
-
-.small {
-  ul {
-    li {
-      height: 2rem;
-    }
-  }
-}

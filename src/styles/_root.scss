@@ -21,7 +21,7 @@ p,
 label,
 ol,
 ul {
-  margin: 0;
+  margin-bottom: 0 !important;
 }
 
 //擋掉原本chrome內建的date picker
@@ -36,7 +36,6 @@ html {
 body {
   padding: 0;
   margin: 0;
-  min-width: 1024px;
   overflow-anchor: none;
   overflow: hidden;
   font-family: "SF Pro Text", Arial;
