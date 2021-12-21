@@ -6,7 +6,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { AppMissingTranslationHandler } from './app-missing.translation.handler';
 
 export function createTranslateLoader(http: HttpClient) {
-  return new TranslateHttpLoader(http, `${environment.baseHref}/assets/i18n/`);
+  return new TranslateHttpLoader(http, `${environment.production ? 'g5-official' : ''}/assets/i18n/`);
 }
 
 @NgModule({
