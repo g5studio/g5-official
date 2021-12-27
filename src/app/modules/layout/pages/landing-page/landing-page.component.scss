@@ -61,6 +61,7 @@ section {
 
     padding: 3rem 9rem 0;
     nav {
+      max-width: 750px;
       position: relative;
       overflow: hidden;
       width: 100%;
@@ -114,6 +115,20 @@ footer {
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: space-between;
+  label {
+    height: 3rem;
+    padding: 0 1rem 0 0.5rem;
+    background-color: $white;
+    border-radius: 3px;
+    font-size: map-get($font-level, "sm");
+    color: #2b2014;
+    img {
+      width: 34px;
+      height: 34px;
+      margin-right: 0.375rem;
+    }
+  }
 }
 
 .fadeout {
@@ -126,6 +141,10 @@ footer {
     &[banner] {
       padding: 3rem 2.5rem;
     }
+  }
+
+  footer {
+    padding: 0 1.5rem;
   }
 }
 
@@ -181,5 +200,12 @@ footer {
         }
       }
     }
+  }
+
+  footer {
+    flex-direction: column;
+    justify-content: flex-start;
+    height: auto;
+    padding: 2rem 0.75rem;
   }
 }
