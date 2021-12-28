@@ -1,0 +1,116 @@
+@import "mixins";
+
+:host {
+  display: inline-block;
+
+  &[upload] {
+    button {
+      &::before {
+        @include icon("\e929", $white);
+        margin-right: 0.5rem;
+      }
+    }
+  }
+
+  &[add] {
+    button {
+      &::before {
+        @include icon("\e906", $white);
+        margin-right: 0.5rem;
+      }
+    }
+  }
+
+  &[xs] {
+    button {
+      font-size: map-get($font-level, "xs");
+      height: 1.5rem;
+      padding: 0 0.5rem;
+    }
+  }
+
+  &[sm] {
+    button {
+      font-size: map-get($font-level, "sm");
+      height: 2rem;
+      padding: 0 1rem;
+    }
+  }
+
+  &[lg] {
+    button {
+      padding: 0 3.5rem;
+      font-size: map-get($font-level, "md");
+      height: 3rem;
+    }
+  }
+
+  &[white] {
+    button {
+      border: 1px solid $primary;
+      color: $primary;
+      background-color: $white;
+      &:hover {
+        background-color: $white;
+        border-color: $dark-orange;
+        color: $dark-orange;
+      }
+      &:disabled {
+        background-color: $white;
+        border-color: $link-water;
+        color: $link-water;
+        cursor: not-allowed;
+      }
+    }
+  }
+
+  &[gray] {
+    button {
+      border: 1px solid $link-water;
+      background-color: $white;
+      color: $dark-gray-blue;
+      &:hover {
+        background-color: $white;
+        border-color: $link-water;
+        color: $dark-gray-blue;
+      }
+      &:disabled {
+        background-color: $white;
+        border-color: $link-water;
+        color: $link-water;
+        cursor: not-allowed;
+      }
+    }
+  }
+}
+
+button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: $primary;
+  color: $white;
+  border: none;
+  border-radius: 3px;
+  font-size: map-get($font-level, "sm");
+  height: 2.5rem;
+  padding: 0 1rem;
+
+  &:empty {
+    display: none;
+  }
+
+  &:hover {
+    background-color: $dark-orange;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:disabled {
+    background-color: $link-water;
+    cursor: not-allowed;
+  }
+}

@@ -1,0 +1,50 @@
+@import "mixins";
+
+.UploadButton {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  input:first-of-type:disabled ~ label {
+    border-color: $link-water;
+    color: $link-water;
+    cursor: not-allowed;
+  }
+  label {
+    @include flex-center;
+    display: inline-flex;
+    border: none;
+    border-radius: 3px;
+    border: 1px solid $primary;
+    color: $primary;
+    background-color: $white;
+    white-space: nowrap;
+    cursor: pointer;
+    &:hover {
+      background-color: $white;
+      border-color: $dark-aqua-green;
+      color: $dark-aqua-green;
+    }
+  }
+
+  input {
+    @include cg-outrange-hidden;
+  }
+
+  &--lg {
+    padding: 0 3.5rem;
+    font-size: map-get($font-level, "md");
+    height: 3rem;
+  }
+
+  &--md {
+    font-size: map-get($font-level, "sm");
+    height: 2.5rem;
+    padding: 0 1rem;
+  }
+
+  &--sm {
+    font-size: map-get($font-level, "sm");
+    height: 2rem;
+    padding: 0 1rem;
+  }
+}

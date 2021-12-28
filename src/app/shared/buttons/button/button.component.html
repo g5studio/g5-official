@@ -1,0 +1,4 @@
+<button [type]="this.type" (click)="this.onClick($event)"
+  [disabled]="this.disabled !== undefined && this.disabled !== false">
+  <ng-content></ng-content>
+</button>

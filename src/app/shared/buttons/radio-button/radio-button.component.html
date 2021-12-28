@@ -1,0 +1,7 @@
+<section class="RadioButton">
+  <input type="radio" [(ngModel)]="this.model" (ngModelChange)="this.notifyValueChange()" [name]=this.name
+    [id]="this.id" [value]="this.value" [disabled]="this.disabled">
+  <label [for]="this.id">
+    <ng-content></ng-content>
+  </label>
+</section>

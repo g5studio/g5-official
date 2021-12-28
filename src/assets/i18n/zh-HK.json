@@ -138,6 +138,7 @@
     }
   },
   "Button": {
+    "Login": "登入",
     "Logout": "登出",
     "Filter": "篩選",
     "Clear": "清除",
@@ -182,12 +183,6 @@
   "User": {},
   "Pages": {
     "Landing": {
-      "Start": "立即開始",
-      "Login": "登入",
-      "Welcome": "歡迎使用",
-      "Signup": "註冊",
-      "RememberMe": "記住我",
-      "ForgotPassword": "忘記密碼",
       "Carousel": {
         "Period1": {
           "Title": "生產期",

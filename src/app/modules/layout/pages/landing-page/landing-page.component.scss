@@ -149,6 +149,10 @@ footer {
 }
 
 @media screen and (max-width: map-get($grid-breakpoints, "md")) {
+  header {
+    padding: 0 1rem;
+  }
+
   section {
     &[banner] {
       height: auto;

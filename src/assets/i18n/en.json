@@ -182,13 +182,6 @@
   "User": {},
   "Pages": {
     "Landing": {
-      "Start": "Start Now",
-      "Login": "Log In",
-      "Welcome": "Welcome",
-      "Signup": "Sign Up",
-      "Submit": "Submit",
-      "RememberMe": "Remember Me",
-      "ForgotPassword": "Forgot Password",
       "Carousel": {
         "Period1": {
           "Title": "Production Period",

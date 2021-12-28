@@ -1,0 +1,8 @@
+<section class="UploadButton">
+  <input #tUploader [id]="this.id" (change)="this.selectFile($event)" class="d-none" type="file"
+    [disabled]="this.disabled">
+  <input *ngIf="this.file" class="form-control mr-3" [value]="this.file?.name" disabled type="text">
+  <label class="UploadButton--{{this.size}}" [for]="this.id" (click)="tUploader.value = null">
+    <ng-content></ng-content>
+  </label>
+</section>

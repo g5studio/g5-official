@@ -3,7 +3,11 @@
     <img src="assets/images/icons/logo.png" alt="">
     Studio™
   </label>
-  <app-language-menu></app-language-menu>
+  <nav class="d-flex flex-row align-items-center">
+    <app-language-menu></app-language-menu>
+    <!-- <app-button class="ml-4" white xs>{{"Button.Login" | translate}}</app-button> -->
+  </nav>
+
 </header>
 <div appResponsiveViewport [responseBuffers]="[tHeader]" class="scroll-bar">
   <section banner>

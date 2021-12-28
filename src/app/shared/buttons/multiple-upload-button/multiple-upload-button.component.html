@@ -1,0 +1,50 @@
+<!-- http://prototype.tcghl.com/MSA_Web_ESOP%20%28Backend%29/Measure/MSA_backend_%E9%80%9A%E7%9F%A5%E7%AE%A1%E7%90%86/%E6%96%B0%E5%A2%9E%E5%85%83%E4%BB%B6/%E4%B8%8A%E5%82%B3%E6%8E%A7%E4%BB%B6%28%E5%A4%9A%E7%AD%86%29/ -->
+
+<input #tUploader (click)="tUploader.value = null" (change)="this.selectFile($event.srcElement.files)" [id]="this.id"
+  type="file" class="d-none" multiple>
+<section class="form-control" [class.pl-3]="!this.empty" [class.pr-3]="!this.empty" [class.pt-3]="!this.empty"
+  [class.pb-2]="!this.empty" [class.bg-white]="!this.empty" [class.h-auto]="!this.empty">
+  <label [class.border-0]="!this.empty" [for]="this.id" (drop)="this.drop($event)" (dragover)="$event.preventDefault()">
+    <ng-template [ngTemplateOutlet]="this.empty ? tEmpty : tFiles"></ng-template>
+  </label>
+</section>
+<nav class="d-flex flex-row align-items-center mt-4">
+  <app-button class="mr-3" (OnClick)="tUploader.click()" white>
+    <ng-content></ng-content>
+  </app-button>
+  <app-button *ngIf="this.uploadFun" [disabled]="this.empty || this.isUploading" upload (OnClick)="this.upload()">
+    {{"Button.Upload" | translate}}
+  </app-button>
+</nav>
+<ng-content select="[history]"></ng-content>
+
+<ng-template #tFiles>
+  <ul>
+    <li *ngFor="let config of (this.fileMap | keyvalue); trackBy:trackByFn;">
+      <div class="position-relative w-100 py-2">
+        <app-icon-button [icon]="'close'" (mouseup)="this.remove(config.value.file, config.value.result, $event)"
+          (mousedown)="$event.stopPropagation()">
+        </app-icon-button>
+        <img class="w-100" [src]="config.value.thumbnail" alt="">
+        <div *ngIf="config.value.progress !== null && config.value.progress < 100" class="backdrop">
+          <p class="cg-font cg-font-xs cg-font-white">{{config.value.progress}}%</p>
+          <div class="backdrop__bar position-relative mt-2">
+            <div [style.width]="config.value.progress + '%'" class="backdrop__bar backdrop__loading"></div>
+          </div>
+        </div>
+        <div class="backdrop__uploaded" [class.backdrop__uploaded--success]="!config.value.failed"
+          [class.backdrop__uploaded--failed]="config.value.failed" *ngIf="config.value.uploaded"></div>
+        <!-- <app-icon-button [icon]="'search1'"></app-icon-button> -->
+      </div>
+      <p class="cg-font cg-font-sm cg-font-hint mt-3">{{config.value.file.name}}</p>
+    </li>
+  </ul>
+</ng-template>
+
+
+<ng-template #tEmpty>
+  <img src="assets/images/upload.png" alt="">
+  <p class="mt-2 cg-font cg-font-dark-gray-blue cg-font-sm cg-font-height-lg">
+    {{"Field.DragToUpload" | translate}}
+  </p>
+</ng-template>

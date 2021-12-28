@@ -1,0 +1,4 @@
+<button (click)="this.OnClick.emit()" class="IconButton">
+    <em *ngIf="this.icon" class="icon-{{this.icon}}"></em>
+    <ng-content></ng-content>
+</button>

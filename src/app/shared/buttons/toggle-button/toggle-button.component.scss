@@ -1,0 +1,13 @@
+@import "variables";
+
+.ToggleButton {
+    background-color: inherit;
+    outline: none;
+    em {
+        color: $link-water;
+        font-size: 1.25rem;
+    }
+    &--enable {
+        color: $dark-gray-blue !important;
+    }
+}

@@ -1,0 +1,10 @@
+<!-- http://prototype.tcghl.com/MSA_Web_ESOP%20%28Backend%29/Measure/MSA_backend_%E9%A0%90%E6%89%A3%E8%82%A1%E5%9B%9E%E5%A1%AB/%E6%96%B0%E5%A2%9E%E5%85%83%E4%BB%B6/#artboard0 -->
+
+<section class="SwitchButton">
+  <input [disabled]="this.disabled" [(ngModel)]="this.model" (ngModelChange)="this.notifyValueChange()" [id]="this.id"
+    type="checkbox">
+  <label [for]="this.id"></label>
+  <p>
+    <ng-content></ng-content>
+  </p>
+</section>

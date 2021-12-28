@@ -182,12 +182,6 @@
   "User": {},
   "Pages": {
     "Landing": {
-      "Start": "立即开始",
-      "Login": "登入",
-      "Welcome": "欢迎使用",
-      "Signup": "注册",
-      "RememberMe": "记住我",
-      "ForgotPassword": "忘记密码",
       "Carousel": {
         "Period1": {
           "Title": "生产期",

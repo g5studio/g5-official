@@ -9,6 +9,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { FieldModule } from './field/field.module';
 import { MenusModule } from './menus/menus.module';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+import { ButtonsModule } from './buttons/buttons.module';
 
 
 
@@ -34,6 +35,7 @@ import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
     ReactiveFormsModule,
     NgbModule,
     FieldModule,
+    ButtonsModule,
     OverlayModule,
     DirectivesModule,
     MenusModule,

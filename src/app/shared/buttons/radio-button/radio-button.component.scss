@@ -1,0 +1,60 @@
+@import "variables";
+@import "mixins";
+
+@mixin active {
+  &::before {
+    visibility: visible;
+  }
+  color: $primary;
+  border-color: $primary;
+}
+
+:host:not(:last-of-type) {
+  margin-right: 1.5rem;
+}
+
+.RadioButton {
+  display: inline-block;
+  input {
+    display: none;
+    &:checked + label {
+      @include active();
+    }
+    &:disabled + label {
+      &::before {
+        color: $gray-blue;
+        visibility: visible;
+        left: 0;
+      }
+      cursor: not-allowed;
+      background-color: $gainsboro;
+      border-color: $light-gray;
+      color: $gray-blue;
+    }
+  }
+
+  label {
+    @include flex-center;
+    padding: 0 2.5rem;
+    position: relative;
+    font-size: map-get($font-level, "sm");
+    height: 2.5rem;
+    background-color: $white;
+    border: 1px solid $light-gray;
+    border-radius: 3px;
+    color: $dark-gray-blue;
+    cursor: pointer;
+    &::before {
+      @include icon("\e92d", $primary);
+      font-size: map-get($font-level, "xl");
+      position: absolute;
+      display: block;
+      visibility: hidden;
+      top: -6px;
+      left: -1px;
+    }
+    &:hover {
+      @include active();
+    }
+  }
+}

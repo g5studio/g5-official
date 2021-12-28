@@ -1,0 +1,69 @@
+@import "variables";
+@import "mixins";
+
+.SwitchButton {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  input {
+    display: none;
+    &:checked + label {
+      &::before {
+        transform: translateY(-50%) translateX(calc(20px));
+      }
+      &::after {
+        content: "\e94c";
+        right: auto;
+        left: 3px;
+        line-height: 12px;
+        transform: translateY(-50%);
+      }
+      background-color: $primary;
+    }
+
+    &:disabled + label {
+      background-color: $link-water;
+      cursor: not-allowed;
+    }
+  }
+
+  label {
+    height: 20px;
+    width: 40px;
+    background-color: $gray-blue;
+    border-radius: 14.5px;
+    cursor: pointer;
+    position: relative;
+    transition: 0.3s;
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      background-color: $white;
+      border-radius: 100%;
+      width: 14px;
+      height: 14px;
+      top: 50%;
+      left: 3px;
+      transform: translateY(-50%);
+      transition: 0.3s;
+    }
+    &::after {
+      @include icon("\e94b", $white);
+      font-size: 10px;
+      display: block;
+      position: absolute;
+      line-height: 10px;
+      top: 50%;
+      right: 3px;
+      transform: translateY(-50%) scale(0.8);
+    }
+  }
+
+  p:not(:empty) {
+    margin-left: 1rem;
+    font-size: map-get($font-level, "sm");
+    line-height: 20px;
+  }
+}

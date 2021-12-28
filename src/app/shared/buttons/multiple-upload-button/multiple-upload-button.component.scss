@@ -1,0 +1,178 @@
+@import "mixins";
+
+:host::ng-deep {
+  ul[upload-list] {
+    width: 100%;
+    @include cg-card;
+    li {
+      display: flex;
+      width: 100%;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      height: 4rem;
+      padding: 0.75rem 1.5rem;
+      a {
+        &:not(:hover) {
+          color: $midnight;
+        }
+        &:hover {
+          color: $primary;
+        }
+        &:empty {
+          display: none;
+        }
+      }
+
+      &:not(:last-of-type) {
+        border-bottom: 1px solid $light-gray;
+      }
+    }
+  }
+}
+
+app-icon-button {
+  display: block;
+  position: absolute;
+  &::ng-deep {
+    button {
+      padding: 0 !important;
+      em {
+        font-size: map-get($font-level, "xs") !important;
+      }
+    }
+  }
+  &[ng-reflect-icon="search1"] {
+    bottom: 0.5rem;
+    left: 0.5rem;
+    &::ng-deep {
+      button {
+        height: 1.5rem !important;
+        width: 1.5rem !important;
+      }
+    }
+  }
+  &[ng-reflect-icon="close"] {
+    top: 0.5rem;
+    right: 0.5rem;
+    &::ng-deep {
+      button {
+        border-radius: 100%;
+        height: 1rem !important;
+        width: 1rem !important;
+        em {
+          transform: scale(0.75);
+        }
+      }
+    }
+  }
+}
+
+section {
+  height: 224px;
+  padding: 0.5rem;
+  box-sizing: border-box;
+  background-color: $gainsboro;
+  &:hover {
+    background-color: $alice-blue;
+    border-color: $bright-blue;
+  }
+  label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    border: 1px dashed $link-water;
+    cursor: pointer;
+    img {
+      height: 112px;
+    }
+  }
+  ul {
+    @include scroll;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    li {
+      min-width: 120px;
+      width: 120px;
+      margin-bottom: 0.5rem;
+      & > div {
+        @include flex-center;
+        background-color: $gainsboro;
+        height: 160px;
+        box-sizing: border-box;
+        border-radius: 2px;
+      }
+      p {
+        @include cg-outrange-hidden;
+      }
+      &:not(:last-of-type) {
+        margin-right: 1rem;
+      }
+    }
+  }
+}
+
+.backdrop {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba($midnight, 0.6);
+  border-radius: 2px;
+  padding: 0 1.5rem;
+  z-index: map-get($layout-level, "cover");
+  &__bar {
+    width: 100%;
+    height: 0.3rem;
+    border-radius: 2px;
+    background-color: $white;
+  }
+
+  &__loading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: 1s;
+    background-color: $primary;
+  }
+
+  &__uploaded {
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba($midnight, 0.6);
+    z-index: map-get($layout-level, "cover");
+    border-radius: 2px;
+    &::before {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: map-get($font-level, "md");
+      border-radius: 100%;
+      background-color: $white;
+    }
+    &--success {
+      &::before {
+        @include icon("\e93b", $water-grass);
+      }
+    }
+    &--failed {
+      &::before {
+        @include icon("\e90e", $danger);
+      }
+    }
+  }
+}
